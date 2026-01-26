@@ -1,5 +1,4 @@
 import re
-import os
 
 press_dict = {
     # 지상파 / 종합편성채널
@@ -22,20 +21,3 @@ def extract_oid_aid(url):
     m = re.search(r'article/(\d+)/(\d+)', url)
     if m: return m.group(1), m.group(2)
     return None, None
-
-def save_articles_to_txt(data, filepath):
-    dir_name = os.path.dirname(filepath)
-    if dir_name and not os.path.exists(dir_name):
-        os.makedirs(dir_name)
-
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(f"# 검색어: {data['keyword']}\n")
-        f.write(f"# 기간: {data['start_date']} ~ {data['end_date']}\n")
-        f.write(f"# 총 수집 기사 수: {len(data['articles'])}\n")
-        f.write("-" * 80 + "\n")
-        f.write("언론사코드(OID)\t기사번호(AID)\t기사연결URL\n")
-        f.write("-" * 80 + "\n")
-
-        for a in data["articles"]:
-            # OID, AID, 전체 URL 순서로 저장
-            f.write(f"{a['oid']}\t{a['aid']}\t{a['url']}\n")
