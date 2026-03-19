@@ -22,6 +22,15 @@ naver-news-comment-crawler/
 
 ---
 
+## 🛠️ 기술 스택
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+---
+
 ## ✨ 주요 기능
 
 - 복수의 언론사를 순차적으로 크롤링
